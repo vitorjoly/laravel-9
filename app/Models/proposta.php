@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class proposta extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'id',
+        'numero_proposta',
+        'valor_proposta',
+        ''
+    ]
 }

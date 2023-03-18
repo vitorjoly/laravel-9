@@ -23,6 +23,16 @@ services:
             - sail
         depends_on:
             - mysql
+    nginx:
+        image: nginx:latest
+        ports:
+            - "808:80"
+            - "443:443"
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./nginx/ssl:/etc/nginx/ssl
+        depends_on:
+            - laravel.test
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
